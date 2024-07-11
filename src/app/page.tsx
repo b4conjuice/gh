@@ -27,7 +27,7 @@ export default async function Home() {
     homepage: repo.homepage,
   }))
   return (
-    <Main className='flex flex-col px-4'>
+    <Main className='container mx-auto flex max-w-screen-md flex-col px-4 md:px-0'>
       <div className='flex flex-grow flex-col'>
         <h1 className='text-center text-2xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10'>
           gh
