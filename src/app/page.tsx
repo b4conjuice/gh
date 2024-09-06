@@ -29,9 +29,6 @@ export default async function Home() {
   return (
     <Main className='container mx-auto flex max-w-screen-md flex-col px-4 md:px-0'>
       <div className='flex flex-grow flex-col'>
-        <h1 className='text-center text-2xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10'>
-          gh
-        </h1>
         <ul className='divide-y divide-cb-dusty-blue'>
           {repos.map(repo => (
             <li key={repo.id} className='flex items-center py-4 first:pt-0'>
