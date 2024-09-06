@@ -17,8 +17,8 @@ type Repo = {
 
 const DEFAULT_USER = 'b4conjuice'
 
-async function RepoList({ user }: { user: string }) {
-  const REPO_API = `https://api.github.com/users/${user}/repos?sort=updated`
+async function RepoList({ username }: { username: string }) {
+  const REPO_API = `https://api.github.com/users/${username}/repos?sort=updated`
 
   const data: Repo[] = await fetcher(REPO_API)
   const repos = data.map(repo => ({
@@ -61,12 +61,11 @@ export default async function Home() {
   noStore()
   const { userId }: { userId: string | null } = auth()
   const user = userId ? await clerkClient.users.getUser(userId) : null
-  const username = user?.username
-  const userName = username ?? DEFAULT_USER
+  const username = user?.username ?? DEFAULT_USER
   return (
     <Main className='container mx-auto flex max-w-screen-md flex-col px-4 md:px-0'>
       <div className='flex flex-grow flex-col'>
-        <RepoList user={userName} />
+        <RepoList username={username} />
       </div>
     </Main>
   )
