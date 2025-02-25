@@ -66,7 +66,7 @@ async function RepoList({ username }: { username: string }) {
               href={repo.homepage}
               target='_blank'
             >
-              <span>{repo.homepage}</span>
+              <span>{repo.homepage.replace('https://', '')}</span>
               <ArrowTopRightOnSquareIcon className='h-6 w-6' />
             </a>
           )}
